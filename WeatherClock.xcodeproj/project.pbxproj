@@ -14,6 +14,10 @@
 		B89797A62038BC40006749D9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B89797A42038BC40006749D9 /* LaunchScreen.storyboard */; };
 		B89797B12038BC40006749D9 /* WeatherClockTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89797B02038BC40006749D9 /* WeatherClockTests.swift */; };
 		B89797BC2038BC40006749D9 /* WeatherClockUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89797BB2038BC40006749D9 /* WeatherClockUITests.swift */; };
+		B89797CA2038D868006749D9 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89797C92038D868006749D9 /* Weather.swift */; };
+		B89797CC2038D8AE006749D9 /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89797CB2038D8AE006749D9 /* WeatherData.swift */; };
+		B89797CE2038DE44006749D9 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89797CD2038DE44006749D9 /* City.swift */; };
+		B89797D02038E2F2006749D9 /* GUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89797CF2038E2F2006749D9 /* GUI.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,10 @@
 		B89797B72038BC40006749D9 /* WeatherClockUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherClockUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B89797BB2038BC40006749D9 /* WeatherClockUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherClockUITests.swift; sourceTree = "<group>"; };
 		B89797BD2038BC40006749D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B89797C92038D868006749D9 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		B89797CB2038D8AE006749D9 /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
+		B89797CD2038DE44006749D9 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		B89797CF2038E2F2006749D9 /* GUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GUI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +107,14 @@
 			children = (
 				B897979B2038BC40006749D9 /* AppDelegate.swift */,
 				B897979D2038BC40006749D9 /* ViewController.swift */,
+				B89797CF2038E2F2006749D9 /* GUI.swift */,
 				B897979F2038BC40006749D9 /* Main.storyboard */,
 				B89797A22038BC40006749D9 /* Assets.xcassets */,
 				B89797A42038BC40006749D9 /* LaunchScreen.storyboard */,
 				B89797A72038BC40006749D9 /* Info.plist */,
+				B89797C92038D868006749D9 /* Weather.swift */,
+				B89797CD2038DE44006749D9 /* City.swift */,
+				B89797CB2038D8AE006749D9 /* WeatherData.swift */,
 			);
 			path = WeatherClock;
 			sourceTree = "<group>";
@@ -260,7 +272,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				B897979E2038BC40006749D9 /* ViewController.swift in Sources */,
+				B89797CE2038DE44006749D9 /* City.swift in Sources */,
+				B89797CA2038D868006749D9 /* Weather.swift in Sources */,
+				B89797CC2038D8AE006749D9 /* WeatherData.swift in Sources */,
 				B897979C2038BC40006749D9 /* AppDelegate.swift in Sources */,
+				B89797D02038E2F2006749D9 /* GUI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

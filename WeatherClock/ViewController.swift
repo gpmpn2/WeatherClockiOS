@@ -9,17 +9,45 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    @IBOutlet weak var topDegree: UILabel!
+    @IBOutlet weak var topLocation: UILabel!
+    @IBOutlet weak var topFeelsLike: UILabel!
+    
+    @IBOutlet weak var lowDegree: UILabel!
+    @IBOutlet weak var lowLocation: UILabel!
+    @IBOutlet weak var lowFeelsLike: UILabel!
+    
+    public var cities: [City] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        loadCities()
+        
+        let delayInSeconds = 3.0
+        DispatchQueue.main.asyncAfter(deadline: .now() + delayInSeconds) {
+            print("PUSHING UPDATE!")
+            for city in self.cities {
+                city.updateWeather()
+            }
+            
+            GUI.refresh(topDegree: self.topDegree, topLocation: self.topLocation, topFeelsLike: self.topFeelsLike, lowDegree: self.lowDegree, lowLocation: self.lowLocation, lowFeelsLike: self.lowFeelsLike, cities: self.cities)
+            print("FINISHED DISPATCH!")
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    public func loadCities() {
+        cities.insert(City(cityName: "Columbia, Missouri", cityURL: "https://www.accuweather.com/en/us/columbia-mo/65201/weather-forecast/329434", cityTimezone: "CST"), at: 0)
+        cities.insert(City(cityName: "Cape Town, South Africa", cityURL: "https://www.accuweather.com/en/za/cape-town/306633/weather-forecast/306633", cityTimezone: "Africa/Cairo"), at: 1)
+        
+        for city in cities {
+            city.updateWeather()
+        }
+    }
 }
 
