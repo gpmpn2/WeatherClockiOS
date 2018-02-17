@@ -12,15 +12,24 @@ class ViewController: UIViewController {
     @IBOutlet weak var topDegree: UILabel!
     @IBOutlet weak var topLocation: UILabel!
     @IBOutlet weak var topFeelsLike: UILabel!
+    @IBOutlet weak var topView: UIView!
+    @IBOutlet weak var topImageView: UIImageView!
     
     @IBOutlet weak var lowDegree: UILabel!
     @IBOutlet weak var lowLocation: UILabel!
     @IBOutlet weak var lowFeelsLike: UILabel!
+    @IBOutlet weak var lowView: UIView!
+    @IBOutlet weak var lowImageView: UIImageView!
     
     public var cities: [City] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.topImageView.image = UIImage(named: "topBackground.png")!
+        
+        self.lowImageView.image = UIImage(named: "lowBackground.png")!
+        
         loadCities()
         
         let delayInSeconds = 3.0
