@@ -32,17 +32,16 @@ class ViewController: UIViewController {
         
         loadCities()
         
-        let delayInSeconds = 3.0
-        DispatchQueue.main.asyncAfter(deadline: .now() + delayInSeconds) {
-            print("PUSHING UPDATE!")
-            for city in self.cities {
-                city.updateWeather()
-            }
-            
-            GUI.refresh(topDegree: self.topDegree, topLocation: self.topLocation, topFeelsLike: self.topFeelsLike, lowDegree: self.lowDegree, lowLocation: self.lowLocation, lowFeelsLike: self.lowFeelsLike, cities: self.cities)
-            print("FINISHED DISPATCH!")
+        var clockTimer = Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(updateWeather), userInfo: nil, repeats: true)
+        clockTimer.fire()
+    }
+    
+    @objc func updateWeather() {
+        for city in self.cities {
+            city.updateWeather()
         }
         
+        GUI.refresh(topDegree: self.topDegree, topLocation: self.topLocation, topFeelsLike: self.topFeelsLike, lowDegree: self.lowDegree, lowLocation: self.lowLocation, lowFeelsLike: self.lowFeelsLike, cities: self.cities)
     }
 
     override func didReceiveMemoryWarning() {
