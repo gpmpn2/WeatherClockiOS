@@ -15,6 +15,8 @@ class City {
     
     private var currentWeather: Weather?
     
+    private var currentTime: String?
+    
     init(cityName: String, cityURL: String, cityTimezone: String) {
         self.cityName = cityName
         self.cityURL = cityURL
@@ -37,6 +39,10 @@ class City {
         return self.currentWeather!
     }
     
+    public func getCityTime() -> String {
+        return self.currentTime!
+    }
+    
     public func printCurrentTemperature() -> String {
         return "\(getCityWeather().getFarenheit() ? getCityWeather().getCurrentTemperature() : getCityWeather().getCurrentTemperatureConversion())°F/\(getCityWeather().getFarenheit() ? getCityWeather().getCurrentTemperatureConversion() : getCityWeather().getCurrentTemperature())°C"
     }
@@ -51,5 +57,9 @@ class City {
     
     public func updateWeather() {
         currentWeather = WeatherData.getWeather(cityURL: getCityURL())
+    }
+    
+    public func updateTime() {
+        currentTime = Time.getTime(timezone: getCityTimezone())
     }
 }

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -160,11 +160,15 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="lowCondensation" destination="7MP-XL-vM3" id="Xkz-qO-YIt"/>
+                        <outlet property="lowDate" destination="Ho1-k4-KHD" id="0lv-4b-ZwD"/>
                         <outlet property="lowDegree" destination="h0t-em-AS0" id="SMe-Yl-GBF"/>
-                        <outlet property="lowFeelsLike" destination="yNA-r2-lJU" id="Sf5-11-Nfo"/>
+                        <outlet property="lowFeelsLike" destination="yNA-r2-lJU" id="fjn-SX-9Pc"/>
                         <outlet property="lowImageView" destination="WAH-nc-Foj" id="7c0-T6-EcC"/>
                         <outlet property="lowLocation" destination="9iD-Tj-Jat" id="VhZ-3Q-LGk"/>
                         <outlet property="lowView" destination="BzV-F1-Aal" id="3Cw-ct-RfN"/>
+                        <outlet property="topCondensation" destination="X0I-ex-XeL" id="bYI-UZ-KUq"/>
+                        <outlet property="topDate" destination="cLw-uD-v4M" id="ntJ-nq-SIp"/>
                         <outlet property="topDegree" destination="IdJ-96-XDN" id="AkM-e5-uYr"/>
                         <outlet property="topFeelsLike" destination="ogi-8C-n1n" id="PM5-pc-q9f"/>
                         <outlet property="topImageView" destination="RBj-Kr-eJd" id="CdB-hS-2Cz"/>

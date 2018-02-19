@@ -14,39 +14,59 @@ class ViewController: UIViewController {
     @IBOutlet weak var topFeelsLike: UILabel!
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var topImageView: UIImageView!
+    @IBOutlet weak var topDate: UILabel!
+    @IBOutlet weak var topCondensation: UILabel!
     
     @IBOutlet weak var lowDegree: UILabel!
     @IBOutlet weak var lowLocation: UILabel!
     @IBOutlet weak var lowFeelsLike: UILabel!
     @IBOutlet weak var lowView: UIView!
     @IBOutlet weak var lowImageView: UIImageView!
+    @IBOutlet weak var lowDate: UILabel!
+    @IBOutlet weak var lowCondensation: UILabel!
     
     public var cities: [City] = []
     
+    public var tick: Int = 0
+    
     override func viewDidLoad() {
+        loadCities()
+        
         super.viewDidLoad()
         
         self.topImageView.image = UIImage(named: "topBackground.png")!
         
         self.lowImageView.image = UIImage(named: "lowBackground.png")!
         
-        loadCities()
         
-        var clockTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
+        var clockTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(update), userInfo: nil, repeats: true)
         
-        var weatherTimer = Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(updateWeather), userInfo: nil, repeats: true)
     }
     
     @objc func updateTime() {
-        
+        for city in self.cities {
+            city.updateTime()
+        }
     }
     
-    @objc func updateWeather() {
+    @objc func update() {
+        tick += 1
+        
         for city in self.cities {
-            city.updateWeather()
+            city.updateTime()
         }
         
-        GUI.refresh(topDegree: self.topDegree, topLocation: self.topLocation, topFeelsLike: self.topFeelsLike, lowDegree: self.lowDegree, lowLocation: self.lowLocation, lowFeelsLike: self.lowFeelsLike, cities: self.cities)
+        if(tick == 30) {
+            DispatchQueue.main.async {
+                print("HERE")
+                for city in self.cities {
+                    city.updateWeather()
+                }
+                print("FINISHED")
+            }
+        }
+        
+        GUI.refresh(topDegree: self.topDegree, topLocation: self.topLocation, topFeelsLike: self.topFeelsLike, lowDegree: self.lowDegree, lowLocation: self.lowLocation, lowFeelsLike: self.lowFeelsLike, topDate: self.topDate, lowDate: self.lowDate, topCondensation: self.topCondensation, lowCondensation: self.lowCondensation, cities: self.cities)
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,7 +80,10 @@ class ViewController: UIViewController {
         
         for city in cities {
             city.updateWeather()
+            city.updateTime()
         }
+        
+        GUI.refresh(topDegree: self.topDegree, topLocation: self.topLocation, topFeelsLike: self.topFeelsLike, lowDegree: self.lowDegree, lowLocation: self.lowLocation, lowFeelsLike: self.lowFeelsLike, topDate: self.topDate, lowDate: self.lowDate, topCondensation: self.topCondensation, lowCondensation: self.lowCondensation, cities: self.cities)
     }
 }
 
