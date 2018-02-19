@@ -32,8 +32,13 @@ class ViewController: UIViewController {
         
         loadCities()
         
-        var clockTimer = Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(updateWeather), userInfo: nil, repeats: true)
-        clockTimer.fire()
+        var clockTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
+        
+        var weatherTimer = Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(updateWeather), userInfo: nil, repeats: true)
+    }
+    
+    @objc func updateTime() {
+        
     }
     
     @objc func updateWeather() {

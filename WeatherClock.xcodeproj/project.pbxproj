@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B85154E0203B613000AF67ED /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85154DF203B613000AF67ED /* Time.swift */; };
 		B897979C2038BC40006749D9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B897979B2038BC40006749D9 /* AppDelegate.swift */; };
 		B897979E2038BC40006749D9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B897979D2038BC40006749D9 /* ViewController.swift */; };
 		B89797A12038BC40006749D9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B897979F2038BC40006749D9 /* Main.storyboard */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B85154DF203B613000AF67ED /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
 		B89797982038BC40006749D9 /* WeatherClock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherClock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B897979B2038BC40006749D9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B897979D2038BC40006749D9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 			children = (
 				B897979B2038BC40006749D9 /* AppDelegate.swift */,
 				B897979D2038BC40006749D9 /* ViewController.swift */,
+				B85154DF203B613000AF67ED /* Time.swift */,
 				B89797CF2038E2F2006749D9 /* GUI.swift */,
 				B897979F2038BC40006749D9 /* Main.storyboard */,
 				B89797A22038BC40006749D9 /* Assets.xcassets */,
@@ -273,6 +276,7 @@
 			files = (
 				B897979E2038BC40006749D9 /* ViewController.swift in Sources */,
 				B89797CE2038DE44006749D9 /* City.swift in Sources */,
+				B85154E0203B613000AF67ED /* Time.swift in Sources */,
 				B89797CA2038D868006749D9 /* Weather.swift in Sources */,
 				B89797CC2038D8AE006749D9 /* WeatherData.swift in Sources */,
 				B897979C2038BC40006749D9 /* AppDelegate.swift in Sources */,

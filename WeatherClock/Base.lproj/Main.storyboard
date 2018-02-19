@@ -32,7 +32,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="367"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RBj-Kr-eJd">
-                                                        <rect key="frame" x="-1" y="0.0" width="376" height="366"/>
+                                                        <rect key="frame" x="-1" y="0.0" width="376" height="367"/>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50°F/20°C" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IdJ-96-XDN">
                                                         <rect key="frame" x="10" y="9.9999999999999964" width="192.33333333333334" height="49.666666666666657"/>
@@ -174,6 +174,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-98.400000000000006" y="121.92118226600985"/>
         </scene>
     </scenes>
 </document>
