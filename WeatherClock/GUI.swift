@@ -11,7 +11,7 @@ import UIKit
 
 class GUI {
     
-    public static func refresh(topDegree: UILabel, topLocation: UILabel, topFeelsLike: UILabel, lowDegree: UILabel, lowLocation: UILabel, lowFeelsLike: UILabel, topDate: UILabel, lowDate: UILabel, topCondensation: UILabel, lowCondensation: UILabel, cities: [City]) {
+    public static func refresh(topDegree: UILabel, topLocation: UILabel, topFeelsLike: UILabel, lowDegree: UILabel, lowLocation: UILabel, lowFeelsLike: UILabel, topDate: UILabel, lowDate: UILabel, topCondensation: UILabel, lowCondensation: UILabel, topImageView: UIImageView, lowImageView: UIImageView, cities: [City]) {
         
         topDegree.text = cities[0].printCurrentTemperature()
         topLocation.text = cities[0].getCityName()
@@ -35,6 +35,7 @@ class GUI {
             topCondensation.textColor = UIColor.black
         }
         
+        topImageView.image = UIImage(named: "\(militaryTime).png")
         topDate.text = time
         topCondensation.text = cities[0].printCondensation()
         
@@ -59,6 +60,7 @@ class GUI {
             lowCondensation.textColor = UIColor.black
         }
         
+        lowImageView.image = UIImage(named: "\(militaryTime).png")
         lowDate.text = time
         lowCondensation.text = cities[1].printCondensation()
     }

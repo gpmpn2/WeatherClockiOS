@@ -34,11 +34,6 @@ class ViewController: UIViewController {
         
         super.viewDidLoad()
         
-        self.topImageView.image = UIImage(named: "topBackground.png")!
-        
-        self.lowImageView.image = UIImage(named: "lowBackground.png")!
-        
-        
         var clockTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(update), userInfo: nil, repeats: true)
         
     }
@@ -57,16 +52,15 @@ class ViewController: UIViewController {
         }
         
         if(tick == 30) {
-            DispatchQueue.main.async {
-                print("HERE")
+            DispatchQueue.global(qos: .userInitiated).async {
                 for city in self.cities {
                     city.updateWeather()
                 }
-                print("FINISHED")
             }
+            tick = 0
         }
         
-        GUI.refresh(topDegree: self.topDegree, topLocation: self.topLocation, topFeelsLike: self.topFeelsLike, lowDegree: self.lowDegree, lowLocation: self.lowLocation, lowFeelsLike: self.lowFeelsLike, topDate: self.topDate, lowDate: self.lowDate, topCondensation: self.topCondensation, lowCondensation: self.lowCondensation, cities: self.cities)
+        GUI.refresh(topDegree: self.topDegree, topLocation: self.topLocation, topFeelsLike: self.topFeelsLike, lowDegree: self.lowDegree, lowLocation: self.lowLocation, lowFeelsLike: self.lowFeelsLike, topDate: self.topDate, lowDate: self.lowDate, topCondensation: self.topCondensation, lowCondensation: self.lowCondensation, topImageView: self.topImageView, lowImageView: self.lowImageView, cities: self.cities)
     }
 
     override func didReceiveMemoryWarning() {
@@ -83,7 +77,7 @@ class ViewController: UIViewController {
             city.updateTime()
         }
         
-        GUI.refresh(topDegree: self.topDegree, topLocation: self.topLocation, topFeelsLike: self.topFeelsLike, lowDegree: self.lowDegree, lowLocation: self.lowLocation, lowFeelsLike: self.lowFeelsLike, topDate: self.topDate, lowDate: self.lowDate, topCondensation: self.topCondensation, lowCondensation: self.lowCondensation, cities: self.cities)
+        GUI.refresh(topDegree: self.topDegree, topLocation: self.topLocation, topFeelsLike: self.topFeelsLike, lowDegree: self.lowDegree, lowLocation: self.lowLocation, lowFeelsLike: self.lowFeelsLike, topDate: self.topDate, lowDate: self.lowDate, topCondensation: self.topCondensation, lowCondensation: self.lowCondensation, topImageView: self.topImageView, lowImageView: self.lowImageView, cities: self.cities)
     }
 }
 
